@@ -28,18 +28,20 @@ const CountryDetails = (props) => {
             <td>Borders</td>
             <td>
               <ul>
-                {country.borders.map((border) => (
-                  <li>
-                    <Link to={`/${border}`}>
-                      {' '}
-                      {
-                        countriesDB.filter(
-                          (country) => country.cca3 === border
-                        )[0].name.official
-                      }{' '}
-                    </Link>
-                  </li>
-                ))}
+                {country.borders.length
+                  ? country.borders.map((border) => (
+                      <li>
+                        <Link to={`/${border}`}>
+                          {' '}
+                          {
+                            countriesDB.filter(
+                              (country) => country.cca3 === border
+                            )[0].name.official
+                          }{' '}
+                        </Link>
+                      </li>
+                    ))
+                  : 'Country has no borders'}
               </ul>
             </td>
           </tr>
