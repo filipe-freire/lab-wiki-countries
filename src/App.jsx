@@ -38,7 +38,6 @@ export class App extends Component {
       <div className="App">
         <div>
           <Navbar title="WikiCountries" />
-          {console.log(this.state.countries)}
         </div>
         <div className="container">
           <div className="row">
